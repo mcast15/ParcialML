@@ -1,0 +1,1886 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>EDA &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'EDA_Modelo_windspeed';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="PrimerA.html">Punto 1 A</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PrimerB.html">Punto 1 B</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EDA_Modelo_fraudecredit.html">Punto2 y ModeloClasificación</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EDA_Modelo_windspeed.html">Punto2 y ModeloRegresión</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FEDA_Modelo_windspeed.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/EDA_Modelo_windspeed.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>EDA</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">EDA</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#librerias">Librerias</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cargar-los-datos">Cargar los Datos</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descripcion-de-tipos-de-variables">Descripción de tipos de variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datos-faltantes">Datos Faltantes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resumen-estadistico">Resumen Estadístico</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#direccion-del-viento-dicvientoh">Dirección del Viento (DicVientoH)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#velocidad-del-viento-velvientoh">Velocidad del Viento (VelVientoH)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#humedad-relativa-maxima-en-la-hora-anterior-humrel-max-hant">Humedad Relativa Máxima en la Hora Anterior (HumRel_Max_HAnt)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#humedad-relativa-minima-en-la-hora-anterior-humrel-min-hant">Humedad Relativa Mínima en la Hora Anterior (HumRel_Min_HAnt)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#temperatura-maxima-del-dia-anterior-temp-max-hant">Temperatura Máxima del Día Anterior (Temp_Max_HAnt)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#temperatura-minima-del-dia-anterior-temp-min-hant">Temperatura Mínima del Día Anterior (Temp_Min_HAnt)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#humedad-relativa-humrelh">Humedad Relativa (HumRelH)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#presion-atmosferica-presatmosh">Presión Atmosférica (PresAtmosH)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#precipitacion-horaria-precipho">Precipitación Horaria (PrecipHo)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rafagas-maximas-de-viento-rafag-max">Ráfagas Máximas de Viento (Rafag_Max)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#presion-atmosferica-maxima-del-dia-anterior-presatmos-max-hant">Presión Atmosférica Máxima del Día Anterior (PresAtmos_Max_HAnt)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-simetria-datos-atipicos-y-dispersion">Análisis de simetría, datos atípicos y dispersión</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#velvientoh">VelVientoH:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dicvientoh">DicVientoH:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#humrel-max">HumRel_Max:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#humrel-min">HumRel_Min:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#humrelh">HumRelH:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rafag-max">Rafag_Max:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dicvientoh-direccion-del-viento">DicVientoH (Dirección del Viento):</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#velvientoh-velocidad-del-viento">VelVientoH (Velocidad del Viento):</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#humrel-max-hant-humedad-relativa-maxima-en-la-hora-anterior">HumRel_Max_HAnt (Humedad Relativa Máxima en la Hora Anterior):</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#humrel-min-hant-humedad-relativa-minima-en-la-hora-anterior">HumRel_Min_HAnt (Humedad Relativa Mínima en la Hora Anterior):</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#humrelh-humedad-relativa">HumRelH (Humedad Relativa):</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rafag-max-rafagas-maximas-de-viento">Rafag_Max (Ráfagas Máximas de Viento):</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-bivariado">Análisis Bivariado</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vif">VIF</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="eda">
+<h1>EDA<a class="headerlink" href="#eda" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="librerias">
+<h1>Librerias<a class="headerlink" href="#librerias" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">pearsonr</span><span class="p">,</span> <span class="n">spearmanr</span> 
+<span class="kn">from</span> <span class="nn">statsmodels.stats.outliers_influence</span> <span class="kn">import</span> <span class="n">variance_inflation_factor</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\mcast\AppData\Local\Temp\ipykernel_3056\1376776544.py:1: DeprecationWarning: 
+Pyarrow will become a required dependency of pandas in the next major release of pandas (pandas 3.0),
+(to allow more performant data types, such as the Arrow string type, and better interoperability with other libraries)
+but was not found to be installed on your system.
+If this would cause problems for you,
+please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
+        
+  import pandas as pd
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="cargar-los-datos">
+<h1>Cargar los Datos<a class="headerlink" href="#cargar-los-datos" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfWind</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;/kaggle/input/datawind/data_treino_dv_df_2000_2010.csv&quot;</span><span class="p">)</span>
+<span class="n">dfWind</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">dfWind</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;/kaggle/input/datawind/data_treino_dv_df_2000_2010.csv&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">dfWind</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+
+<span class="nn">File ~\miniconda3\Lib\site-packages\pandas\io\parsers\readers.py:1024,</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, date_format, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options, dtype_backend)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1011</span> <span class="n">kwds_defaults</span> <span class="o">=</span> <span class="n">_refine_defaults_read</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1012</span>     <span class="n">dialect</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1013</span>     <span class="n">delimiter</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1020</span>     <span class="n">dtype_backend</span><span class="o">=</span><span class="n">dtype_backend</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1021</span> <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1022</span> <span class="n">kwds</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwds_defaults</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1024</span> <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
+
+<span class="nn">File ~\miniconda3\Lib\site-packages\pandas\io\parsers\readers.py:618,</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">615</span> <span class="n">_validate_names</span><span class="p">(</span><span class="n">kwds</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;names&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">617</span> <span class="c1"># Create the parser.</span>
+<span class="ne">--&gt; </span><span class="mi">618</span> <span class="n">parser</span> <span class="o">=</span> <span class="n">TextFileReader</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">620</span> <span class="k">if</span> <span class="n">chunksize</span> <span class="ow">or</span> <span class="n">iterator</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">621</span>     <span class="k">return</span> <span class="n">parser</span>
+
+<span class="nn">File ~\miniconda3\Lib\site-packages\pandas\io\parsers\readers.py:1618,</span> in <span class="ni">TextFileReader.__init__</span><span class="nt">(self, f, engine, **kwds)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1615</span>     <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1617</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="p">:</span> <span class="n">IOHandles</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="ne">-&gt; </span><span class="mi">1618</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_engine</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">)</span>
+
+<span class="nn">File ~\miniconda3\Lib\site-packages\pandas\io\parsers\readers.py:1878,</span> in <span class="ni">TextFileReader._make_engine</span><span class="nt">(self, f, engine)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1876</span>     <span class="k">if</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mode</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1877</span>         <span class="n">mode</span> <span class="o">+=</span> <span class="s2">&quot;b&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1878</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="o">=</span> <span class="n">get_handle</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1879</span>     <span class="n">f</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1880</span>     <span class="n">mode</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1881</span>     <span class="n">encoding</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1882</span>     <span class="n">compression</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;compression&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1883</span>     <span class="n">memory_map</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;memory_map&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1884</span>     <span class="n">is_text</span><span class="o">=</span><span class="n">is_text</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1885</span>     <span class="n">errors</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding_errors&quot;</span><span class="p">,</span> <span class="s2">&quot;strict&quot;</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1886</span>     <span class="n">storage_options</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;storage_options&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1887</span> <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1888</span> <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+<span class="g g-Whitespace">   </span><span class="mi">1889</span> <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="o">.</span><span class="n">handle</span>
+
+<span class="nn">File ~\miniconda3\Lib\site-packages\pandas\io\common.py:873,</span> in <span class="ni">get_handle</span><span class="nt">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">868</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">869</span>     <span class="c1"># Check whether the filename is to be opened in binary mode.</span>
+<span class="g g-Whitespace">    </span><span class="mi">870</span>     <span class="c1"># Binary mode does not support &#39;encoding&#39; and &#39;newline&#39;.</span>
+<span class="g g-Whitespace">    </span><span class="mi">871</span>     <span class="k">if</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">encoding</span> <span class="ow">and</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">872</span>         <span class="c1"># Encoding</span>
+<span class="ne">--&gt; </span><span class="mi">873</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">874</span>             <span class="n">handle</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">875</span>             <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">876</span>             <span class="n">encoding</span><span class="o">=</span><span class="n">ioargs</span><span class="o">.</span><span class="n">encoding</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">877</span>             <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">878</span>             <span class="n">newline</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">879</span>         <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">880</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">881</span>         <span class="c1"># Binary mode</span>
+<span class="g g-Whitespace">    </span><span class="mi">882</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">)</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;/kaggle/input/datawind/data_treino_dv_df_2000_2010.csv&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Renombrar columnas con nombres más cortos</span>
+<span class="n">dfWind</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span>
+    <span class="s1">&#39;HORA (UTC)&#39;</span><span class="p">:</span> <span class="s1">&#39;Hora&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;VENTO, DIREï¿½ï¿½O HORARIA (gr) (ï¿½ (gr))&#39;</span><span class="p">:</span> <span class="s1">&#39;DicVientoH&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;VENTO, VELOCIDADE HORARIA (m/s)&#39;</span><span class="p">:</span> <span class="s1">&#39;VelVientoH&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;UMIDADE REL. MAX. NA HORA ANT. (AUT) (%)&#39;</span><span class="p">:</span> <span class="s1">&#39;HumRel_Max_HAnt&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;UMIDADE REL. MIN. NA HORA ANT. (AUT) (%)&#39;</span><span class="p">:</span> <span class="s1">&#39;HumRel_Min_HAnt&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;TEMPERATURA Mï¿½XIMA NA HORA ANT. (AUT) (ï¿½C)&#39;</span><span class="p">:</span> <span class="s1">&#39;Temp_Max_HAnt&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;TEMPERATURA Mï¿½NIMA NA HORA ANT. (AUT) (ï¿½C)&#39;</span><span class="p">:</span> <span class="s1">&#39;Temp_Min_HAnt&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;UMIDADE RELATIVA DO AR, HORARIA (%)&#39;</span><span class="p">:</span> <span class="s1">&#39;HumRelH&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;PRESSAO ATMOSFERICA AO NIVEL DA ESTACAO, HORARIA (mB)&#39;</span><span class="p">:</span> <span class="s1">&#39;PresAtmosH&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;PRECIPITAï¿½ï¿½O TOTAL, HORï¿½RIO (mm)&#39;</span><span class="p">:</span> <span class="s1">&#39;PrecipHo&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;VENTO, RAJADA MAXIMA (m/s)&#39;</span><span class="p">:</span> <span class="s1">&#39;Rafag_Max&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;PRESSï¿½O ATMOSFERICA MAX.NA HORA ANT. (AUT) (mB)&#39;</span><span class="p">:</span> <span class="s1">&#39;PresAtmos_Max_HAnt&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;PRESSï¿½O ATMOSFERICA MIN. NA HORA ANT. (AUT) (mB)&#39;</span><span class="p">:</span> <span class="s1">&#39;PresAtmos_Min_HAnt&#39;</span>
+<span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">dfWind</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Hora</th>
+      <th>DicVientoH</th>
+      <th>VelVientoH</th>
+      <th>HumRel_Max_HAnt</th>
+      <th>HumRel_Min_HAnt</th>
+      <th>Temp_Max_HAnt</th>
+      <th>Temp_Min_HAnt</th>
+      <th>HumRelH</th>
+      <th>PresAtmosH</th>
+      <th>PrecipHo</th>
+      <th>Rafag_Max</th>
+      <th>PresAtmos_Max_HAnt</th>
+      <th>PresAtmos_Min_HAnt</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>12:00</td>
+      <td>0.809017</td>
+      <td>1.8</td>
+      <td>69.0</td>
+      <td>60.0</td>
+      <td>22.6</td>
+      <td>20.7</td>
+      <td>61.0</td>
+      <td>888.2</td>
+      <td>0.0</td>
+      <td>3.8</td>
+      <td>888.2</td>
+      <td>887.7</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>13:00</td>
+      <td>0.965926</td>
+      <td>2.7</td>
+      <td>62.0</td>
+      <td>55.0</td>
+      <td>24.2</td>
+      <td>22.5</td>
+      <td>55.0</td>
+      <td>888.4</td>
+      <td>0.0</td>
+      <td>4.7</td>
+      <td>888.4</td>
+      <td>888.2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>14:00</td>
+      <td>0.891007</td>
+      <td>2.0</td>
+      <td>56.0</td>
+      <td>50.0</td>
+      <td>25.5</td>
+      <td>24.3</td>
+      <td>51.0</td>
+      <td>888.1</td>
+      <td>0.0</td>
+      <td>4.9</td>
+      <td>888.4</td>
+      <td>888.1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>15:00</td>
+      <td>0.848048</td>
+      <td>2.5</td>
+      <td>52.0</td>
+      <td>44.0</td>
+      <td>27.4</td>
+      <td>25.0</td>
+      <td>44.0</td>
+      <td>887.4</td>
+      <td>0.0</td>
+      <td>5.8</td>
+      <td>888.1</td>
+      <td>887.4</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>16:00</td>
+      <td>0.224951</td>
+      <td>2.4</td>
+      <td>50.0</td>
+      <td>43.0</td>
+      <td>27.1</td>
+      <td>25.5</td>
+      <td>46.0</td>
+      <td>886.5</td>
+      <td>0.0</td>
+      <td>5.8</td>
+      <td>887.4</td>
+      <td>886.5</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<section id="descripcion-de-tipos-de-variables">
+<h2>Descripción de tipos de variables<a class="headerlink" href="#descripcion-de-tipos-de-variables" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfWind</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 87693 entries, 0 to 87692
+Data columns (total 13 columns):
+ #   Column              Non-Null Count  Dtype  
+---  ------              --------------  -----  
+ 0   Hora                87693 non-null  object 
+ 1   DicVientoH          87693 non-null  float64
+ 2   VelVientoH          87693 non-null  float64
+ 3   HumRel_Max_HAnt     87693 non-null  float64
+ 4   HumRel_Min_HAnt     87693 non-null  float64
+ 5   Temp_Max_HAnt       87693 non-null  float64
+ 6   Temp_Min_HAnt       87693 non-null  float64
+ 7   HumRelH             87693 non-null  float64
+ 8   PresAtmosH          87693 non-null  float64
+ 9   PrecipHo            87693 non-null  float64
+ 10  Rafag_Max           87693 non-null  float64
+ 11  PresAtmos_Max_HAnt  87693 non-null  float64
+ 12  PresAtmos_Min_HAnt  87693 non-null  float64
+dtypes: float64(12), object(1)
+memory usage: 8.7+ MB
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><strong>Hora</strong>: Hora - (cadena de texto)</p></li>
+<li><p><strong>DicVientoH</strong>: Dirección del viento horaria - (número decimal)</p></li>
+<li><p><strong>VelVientoH</strong>: Velocidad horaria del viento (m/s) - (número decimal)</p></li>
+<li><p><strong>HumRel_Max_HAnt</strong>: Humedad rel. máx. hora anterior (AUT) (%) - (número decimal)</p></li>
+<li><p><strong>HumRel_Min_HAnt</strong>: Humedad rel. mín. hora anterior (AUT) (%) - (número decimal)</p></li>
+<li><p><strong>Temp_Max_HAnt</strong>: Temperatura máx. hora anterior (AUT) (°C) - (número decimal)</p></li>
+<li><p><strong>Temp_Min_HAnt</strong>: Temperatura mín. hora anterior (AUT) (°C) - (número decimal)</p></li>
+<li><p><strong>HumRelH</strong>: Humedad relativa horaria (%) - (número decimal)</p></li>
+<li><p><strong>PresAtmosH</strong>: Presión atmosférica a nivel de estación, horaria (mB) - (número decimal)</p></li>
+<li><p><strong>PrecipHo</strong>: Precipitación total por hora (mm) - (número decimal)</p></li>
+<li><p><strong>Rafag_Max</strong>: Máxima ráfaga de viento (m/s) - (número decimal)</p></li>
+<li><p><strong>PresAtmos_Max_HAnt</strong>: Presión atmosférica máx. hora anterior (AUT) (mB) - (número decimal)</p></li>
+<li><p><strong>PresAtmos_Min_HAnt</strong>: Presión atmosférica mín. hora anterior (AUT) (mB) - (número decimal)</p></li>
+</ul>
+</section>
+<section id="datos-faltantes">
+<h2>Datos Faltantes<a class="headerlink" href="#datos-faltantes" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dFaltantes</span> <span class="o">=</span> <span class="n">dfWind</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">fPercentage</span> <span class="o">=</span> <span class="p">(</span><span class="n">dFaltantes</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">dfWind</span><span class="p">))</span> <span class="o">*</span> <span class="mi">100</span>
+<span class="n">missingInfo</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Datos Faltantes&#39;</span><span class="p">:</span> <span class="n">dFaltantes</span><span class="p">,</span> <span class="s1">&#39;Porcentaje&#39;</span><span class="p">:</span> <span class="n">fPercentage</span><span class="p">})</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">missingInfo</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                    Datos Faltantes  Porcentaje
+Hora                              0         0.0
+DicVientoH                        0         0.0
+VelVientoH                        0         0.0
+HumRel_Max_HAnt                   0         0.0
+HumRel_Min_HAnt                   0         0.0
+Temp_Max_HAnt                     0         0.0
+Temp_Min_HAnt                     0         0.0
+HumRelH                           0         0.0
+PresAtmosH                        0         0.0
+PrecipHo                          0         0.0
+Rafag_Max                         0         0.0
+PresAtmos_Max_HAnt                0         0.0
+PresAtmos_Min_HAnt                0         0.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfWind</span><span class="o">.</span><span class="n">Hora</span><span class="p">[:</span><span class="mi">50</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     12:00
+1     13:00
+2     14:00
+3     15:00
+4     16:00
+5     17:00
+6     18:00
+7     19:00
+8     20:00
+9     21:00
+10    22:00
+11    23:00
+12    00:00
+13    01:00
+14    02:00
+15    03:00
+16    04:00
+17    05:00
+18    06:00
+19    07:00
+20    08:00
+21    09:00
+22    10:00
+23    11:00
+24    12:00
+25    13:00
+26    14:00
+27    15:00
+28    16:00
+29    17:00
+30    18:00
+31    19:00
+32    20:00
+33    21:00
+34    22:00
+35    23:00
+36    00:00
+37    01:00
+38    02:00
+39    03:00
+40    04:00
+41    05:00
+42    06:00
+43    07:00
+44    08:00
+45    09:00
+46    10:00
+47    11:00
+48    12:00
+49    13:00
+Name: Hora, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="resumen-estadistico">
+<h2>Resumen Estadístico<a class="headerlink" href="#resumen-estadistico" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfWind</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>DicVientoH</th>
+      <th>VelVientoH</th>
+      <th>HumRel_Max_HAnt</th>
+      <th>HumRel_Min_HAnt</th>
+      <th>Temp_Max_HAnt</th>
+      <th>Temp_Min_HAnt</th>
+      <th>HumRelH</th>
+      <th>PresAtmosH</th>
+      <th>PrecipHo</th>
+      <th>Rafag_Max</th>
+      <th>PresAtmos_Max_HAnt</th>
+      <th>PresAtmos_Min_HAnt</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>87693.000000</td>
+      <td>87693.000000</td>
+      <td>87693.000000</td>
+      <td>87693.000000</td>
+      <td>87693.000000</td>
+      <td>87693.000000</td>
+      <td>87693.000000</td>
+      <td>87693.000000</td>
+      <td>87693.000000</td>
+      <td>87693.000000</td>
+      <td>87693.000000</td>
+      <td>87693.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>0.405810</td>
+      <td>2.466192</td>
+      <td>69.058465</td>
+      <td>63.176194</td>
+      <td>21.921264</td>
+      <td>20.684570</td>
+      <td>66.146682</td>
+      <td>887.251925</td>
+      <td>0.160907</td>
+      <td>5.161076</td>
+      <td>887.580724</td>
+      <td>886.891093</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>0.686247</td>
+      <td>1.313968</td>
+      <td>19.640222</td>
+      <td>20.166336</td>
+      <td>3.721386</td>
+      <td>3.513744</td>
+      <td>19.992327</td>
+      <td>4.012404</td>
+      <td>1.307515</td>
+      <td>2.311157</td>
+      <td>3.646750</td>
+      <td>3.564539</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>-1.000000</td>
+      <td>0.000000</td>
+      <td>12.000000</td>
+      <td>10.000000</td>
+      <td>9.200000</td>
+      <td>8.400000</td>
+      <td>10.000000</td>
+      <td>863.400000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>865.300000</td>
+      <td>862.800000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>-0.156434</td>
+      <td>1.500000</td>
+      <td>54.000000</td>
+      <td>48.000000</td>
+      <td>19.200000</td>
+      <td>18.400000</td>
+      <td>51.000000</td>
+      <td>885.300000</td>
+      <td>0.000000</td>
+      <td>3.400000</td>
+      <td>885.600000</td>
+      <td>885.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>0.788011</td>
+      <td>2.400000</td>
+      <td>72.000000</td>
+      <td>64.000000</td>
+      <td>21.400000</td>
+      <td>20.200000</td>
+      <td>68.000000</td>
+      <td>887.200000</td>
+      <td>0.000000</td>
+      <td>5.000000</td>
+      <td>887.500000</td>
+      <td>886.900000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>0.970296</td>
+      <td>3.400000</td>
+      <td>87.000000</td>
+      <td>80.000000</td>
+      <td>24.700000</td>
+      <td>23.100000</td>
+      <td>84.000000</td>
+      <td>889.100000</td>
+      <td>0.000000</td>
+      <td>6.800000</td>
+      <td>889.300000</td>
+      <td>888.800000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>1.000000</td>
+      <td>10.000000</td>
+      <td>100.000000</td>
+      <td>98.000000</td>
+      <td>35.300000</td>
+      <td>34.400000</td>
+      <td>99.000000</td>
+      <td>1023.500000</td>
+      <td>70.800000</td>
+      <td>24.300000</td>
+      <td>913.100000</td>
+      <td>910.900000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="direccion-del-viento-dicvientoh">
+<h2>Dirección del Viento (DicVientoH)<a class="headerlink" href="#direccion-del-viento-dicvientoh" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>La dirección del viento promedio es de 0.40581 con una ds de  0.686247 y osicina entre -1 y 1.  El 25% de los datos tienen una dirección de viento que es igual o menor que <code class="docutils literal notranslate"><span class="pre">-0.156434</span></code>, lo que sugiere que un cuarto de los datos presentan vientos que podrían considerarse suaves o en una dirección opuesta a la predominante.</p></li>
+</ul>
+</section>
+<section id="velocidad-del-viento-velvientoh">
+<h2>Velocidad del Viento (VelVientoH)<a class="headerlink" href="#velocidad-del-viento-velvientoh" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>La velocidad promedio del viento es de 2.466192 con una ds de 1.313968 y varia entre 0 y 10.  75% de los datos presentaron velocidades de viento de 3.4 m/s o menos.</p></li>
+</ul>
+</section>
+<section id="humedad-relativa-maxima-en-la-hora-anterior-humrel-max-hant">
+<h2>Humedad Relativa Máxima en la Hora Anterior (HumRel_Max_HAnt)<a class="headerlink" href="#humedad-relativa-maxima-en-la-hora-anterior-humrel-max-hant" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>la humedad relativa máxima en la hora anterior fue moderadamente va de 12% a 100% lo que indica saturación completa en algunos momentos y el 25% de los datos registraron una humedad relativa máxima de 54% o menos.</p></li>
+</ul>
+</section>
+<section id="humedad-relativa-minima-en-la-hora-anterior-humrel-min-hant">
+<h2>Humedad Relativa Mínima en la Hora Anterior (HumRel_Min_HAnt)<a class="headerlink" href="#humedad-relativa-minima-en-la-hora-anterior-humrel-min-hant" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>*En promedio, la humedad relativa mínima es de 63.176194% con una variabilidad de 20.166336% indica una variabilidad similar a la humedad relativa máxima y oscila entre el 10% y 98%</p></li>
+</ul>
+</section>
+<section id="temperatura-maxima-del-dia-anterior-temp-max-hant">
+<h2>Temperatura Máxima del Día Anterior (Temp_Max_HAnt)<a class="headerlink" href="#temperatura-maxima-del-dia-anterior-temp-max-hant" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>La temperatura máxima promedio del día anterior es de 21.92 grados con una desviación estándar de 3.72, variando entre 9.20 y 35.30 grados. Esto indica que la temperatura máxima puede fluctuar significativamente de un día para otro. El 25% de los días tuvieron una temperatura máxima que es igual o menor a 19.20 grados.</p></li>
+</ul>
+</section>
+<section id="temperatura-minima-del-dia-anterior-temp-min-hant">
+<h2>Temperatura Mínima del Día Anterior (Temp_Min_HAnt)<a class="headerlink" href="#temperatura-minima-del-dia-anterior-temp-min-hant" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>La temperatura mínima promedio del día anterior es de 20.68 grados con una desviación estándar de 3.51, oscilando entre 8.40 y 34.40 grados. La distribución de la temperatura mínima muestra que hay menos variabilidad en las temperaturas mínimas que en las máximas. El 75% de los días tuvieron una temperatura mínima a lo mas de 20 grados.</p></li>
+</ul>
+</section>
+<section id="humedad-relativa-humrelh">
+<h2>Humedad Relativa (HumRelH)<a class="headerlink" href="#humedad-relativa-humrelh" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>La humedad relativa promedio es de 66.14%, con una desviación estándar de 19.99%. Los valores varían desde un mínimo de 10.00% hasta un máximo de 99.00%, lo que sugiere que hay días con muy baja humedad y otros con niveles de saturación. El 25% de los registros tienen una humedad relativa de 51.00% o menos.</p></li>
+</ul>
+</section>
+<section id="presion-atmosferica-presatmosh">
+<h2>Presión Atmosférica (PresAtmosH)<a class="headerlink" href="#presion-atmosferica-presatmosh" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>La presión atmosférica promedio es de 887.25 hPa con una desviación estándar de 4.01, variando entre 863.40 y 1023.50 hPa. El 50% de los datos tienen una presión atmosférica que es igual o menor que 885.30 hPa, lo cual es un indicador del rango medio de presión atmosférica para la región.</p></li>
+</ul>
+</section>
+<section id="precipitacion-horaria-precipho">
+<h2>Precipitación Horaria (PrecipHo)<a class="headerlink" href="#precipitacion-horaria-precipho" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>La precipitación promedio en una hora es de 0.16 mm con una desviación estándar de 1.31 mm. El 75% de los datos registraron una precipitación horaria de 0.00 mm, sugiriendo que las lluvias son poco frecuentes o muy ligeras la mayor parte del tiempo.</p></li>
+</ul>
+</section>
+<section id="rafagas-maximas-de-viento-rafag-max">
+<h2>Ráfagas Máximas de Viento (Rafag_Max)<a class="headerlink" href="#rafagas-maximas-de-viento-rafag-max" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>La velocidad máxima de las ráfagas de viento es en promedio 5.16 km/h con una desviación estándar de 2.31 km/h. Los valores varían desde 0.00 km/h, que indica calma, hasta 24.30 km/h, que sugiere la presencia de ráfagas fuertes ocasionalmente.</p></li>
+</ul>
+</section>
+<section id="presion-atmosferica-maxima-del-dia-anterior-presatmos-max-hant">
+<h2>Presión Atmosférica Máxima del Día Anterior (PresAtmos_Max_HAnt)<a class="headerlink" href="#presion-atmosferica-maxima-del-dia-anterior-presatmos-max-hant" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>La presión atmosférica máxima promedio del día anterior es de 887.58 hPa con una desviación estándar de 3.65 hPa. Los valores oscilan entre 865.30 y 913.10 hPa. El 25% de los datos registraron una presión atmosférica máxima de 885.60 hPa o menos.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">correlation_matrix</span> <span class="o">=</span> <span class="n">dfWind</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;int&#39;</span><span class="p">,</span> <span class="s1">&#39;float&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+
+<span class="c1"># Configurando el estilo de seaborn</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">)</span>
+
+<span class="c1"># Creando la matriz de correlación</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">correlation_matrix</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;coolwarm&quot;</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;.2f&quot;</span><span class="p">,</span> <span class="n">linewidths</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Matriz de Correlación de Variables Numéricas&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/67adb910df2cdb63ec535c0dcedb5c0fd2e19546018366c15e00f80737fca1bf.png" src="_images/67adb910df2cdb63ec535c0dcedb5c0fd2e19546018366c15e00f80737fca1bf.png" />
+</div>
+</div>
+<ul class="simple">
+<li><p>HumRel_Max_HAnt tiene una correlación muy alta con HumRel_Min_HAnt y HumRelH , con valores de 0.98 y 0.98 respectivamente. Esto indica que, como era de esperar, la humedad relativa tiende a variar de manera similar tanto para los valores máximos como mínimos durante un período de tiempo corto.</p></li>
+<li><p>La variable respuesta VelVientoH muestra una correlación moderada de 0.87 con Rafag_Max , lo cual tiene sentido ya que es probable que días con vientos fuertes también presenten ráfagas intensas.</p></li>
+<li><p>DicVientoH (Dirección del Viento) tiene una correlación muy baja o inexistente con la mayoría de las otras variables, incluyendo VelVientoH con una correlación de 0.26. Esto podría indicar que la dirección del viento no está fuertemente ligada a su velocidad o a otros factores como la humedad o la presión atmosférica en esta muestra de datos.</p></li>
+<li><p>HumRel_Max_HAnt, HumRel_Min_HAnt, y HumRelH tienen correlaciones muy altas entre sí, lo que podría sugerir multicolinealidad si se usan juntas en un modelo, pero también indica que son buenos indicadores de las condiciones de humedad que podrían afectar la velocidad del viento.</p></li>
+</ul>
+<p>Dado que la variable de respuesta es VelVientoH estoy interesado en hacer un análisis especifico con respecto a en DicVientoH, HumRel_Max_HAnt, HumRel_Min_HAnt, HumRelH, y Rafag_Max dado los resultados en la matriz.</p>
+</section>
+<section id="analisis-de-simetria-datos-atipicos-y-dispersion">
+<h2>Análisis de simetría, datos atípicos y dispersión<a class="headerlink" href="#analisis-de-simetria-datos-atipicos-y-dispersion" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">selected</span> <span class="o">=</span> <span class="n">dfWind</span><span class="p">[[</span><span class="s1">&#39;VelVientoH&#39;</span><span class="p">,</span> <span class="s1">&#39;DicVientoH&#39;</span><span class="p">,</span> <span class="s1">&#39;HumRel_Max_HAnt&#39;</span><span class="p">,</span> <span class="s1">&#39;HumRel_Min_HAnt&#39;</span><span class="p">,</span> <span class="s1">&#39;HumRelH&#39;</span><span class="p">,</span> <span class="s1">&#39;Rafag_Max&#39;</span><span class="p">]]</span>
+
+<span class="c1"># Crear el boxplot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">selected</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">selected</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Boxplot de las variables seleccionadas&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Variables&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Valores&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/ab0d4a5b1f9f0a1d9377b035cde0126993ad2ce969312d04d7c80e7e2246ed41.png" src="_images/ab0d4a5b1f9f0a1d9377b035cde0126993ad2ce969312d04d7c80e7e2246ed41.png" />
+</div>
+</div>
+</section>
+<section id="velvientoh">
+<h2>VelVientoH:<a class="headerlink" href="#velvientoh" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Datos atípicos:</strong> Hay bastantes datos atípicos, todos en el rango inferior. Esto significa que hay momentos en los que la velocidad del viento es inusualmente baja.</p></li>
+<li><p><strong>Sesgo:</strong> El boxplot muestra un sesgo positivo leve, dado que la mediana está más cerca del primer cuartil que del tercer cuartil, y los bigotes están desequilibrados, siendo el superior más corto.</p></li>
+<li><p><strong>Variabilidad:</strong> La variabilidad parece ser baja, ya que la caja es relativamente pequeña.</p></li>
+</ul>
+</section>
+<section id="dicvientoh">
+<h2>DicVientoH:<a class="headerlink" href="#dicvientoh" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Datos atípicos:</strong> No hay datos atípicos visibles en este boxplot.</p></li>
+<li><p><strong>Sesgo:</strong> Parece haber un sesgo positivo muy leve, ya que la mediana está ligeramente más cerca del primer cuartil.</p></li>
+<li><p><strong>Variabilidad:</strong> La variabilidad es baja a moderada, como se indica por el tamaño de la caja.</p></li>
+</ul>
+</section>
+<section id="humrel-max">
+<h2>HumRel_Max:<a class="headerlink" href="#humrel-max" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Datos atípicos:</strong> No hay datos atípicos presentes.</p></li>
+<li><p><strong>Sesgo:</strong> El boxplot es bastante muestra un sesgo positivo pronunciado.</p></li>
+<li><p><strong>Variabilidad:</strong> Existe una variabilidad moderada, con un rango intercuartílico más amplio que los boxplots anteriores.</p></li>
+</ul>
+</section>
+<section id="humrel-min">
+<h2>HumRel_Min:<a class="headerlink" href="#humrel-min" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Datos atípicos:</strong> No hay datos atípicos presentes.</p></li>
+<li><p><strong>Sesgo:</strong> Este boxplot es simétrico, lo que indica una distribución equilibrada de los datos alrededor de la mediana pero hay un leve sesgo positivo.</p></li>
+<li><p><strong>Variabilidad:</strong> La variabilidad es similar a la de HumRel_Max, con un rango intercuartílico moderado.</p></li>
+</ul>
+</section>
+<section id="humrelh">
+<h2>HumRelH:<a class="headerlink" href="#humrelh" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Datos atípicos:</strong> No se observan datos atípicos.</p></li>
+<li><p><strong>Sesgo:</strong> Es similar al de <strong>HumRel_Max</strong> .</p></li>
+<li><p><strong>Variabilidad:</strong> La variabilidad es moderada, y el rango intercuartílico es comparable a los de HumRel_Max y HumRel_Min.</p></li>
+</ul>
+</section>
+<section id="rafag-max">
+<h2>Rafag_Max:<a class="headerlink" href="#rafag-max" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Datos atípicos:</strong> Hay varios datos atípicos visibles en el extremo superior, lo que indica que hay ocasiones en las que las ráfagas de viento alcanzan valores inusualmente altos.</p></li>
+<li><p><strong>Sesgo:</strong> Hay un sesgo negativo, con la mediana más cerca del tercer cuartílico y un bigote inferior que apenas se extiende, indicando que la mayoría de los valores son bajos, pero hay una cola de valores más altos.</p></li>
+<li><p><strong>Variabilidad:</strong> La variabilidad es baja para la mayoría de los datos, pero los datos atípicos sugieren que ocasionalmente hay valores extremos.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">selected</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/46e9dd65117d4f68bd0cdf9bc02fda090615689a63f810d71ea83e0ddbe40d11.png" src="_images/46e9dd65117d4f68bd0cdf9bc02fda090615689a63f810d71ea83e0ddbe40d11.png" />
+</div>
+</div>
+</section>
+<section id="dicvientoh-direccion-del-viento">
+<h2>DicVientoH (Dirección del Viento):<a class="headerlink" href="#dicvientoh-direccion-del-viento" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>La distribución no es simétrica, lo que sugiere un sesgo hacia la derecha.</p></li>
+</ul>
+</section>
+<section id="velvientoh-velocidad-del-viento">
+<h2>VelVientoH (Velocidad del Viento):<a class="headerlink" href="#velvientoh-velocidad-del-viento" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>La distribución es leptocúrtica, con un pico más pronunciado que una distribución normal, indicando una varianza baja con muchos datos cerca de la media por tanto el sesgo a la izquierda.</p></li>
+</ul>
+</section>
+<section id="humrel-max-hant-humedad-relativa-maxima-en-la-hora-anterior">
+<h2>HumRel_Max_HAnt (Humedad Relativa Máxima en la Hora Anterior):<a class="headerlink" href="#humrel-max-hant-humedad-relativa-maxima-en-la-hora-anterior" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Muestra un sesgo positivo pronunciado, con una acumulación de valores hacia el extremo superior del rango.</p></li>
+<li><p>La curtosis es alta, indicando una distribución puntiaguda con colas delgadas, lo que significa que los valores tienden a estar cerca del máximo.</p></li>
+</ul>
+</section>
+<section id="humrel-min-hant-humedad-relativa-minima-en-la-hora-anterior">
+<h2>HumRel_Min_HAnt (Humedad Relativa Mínima en la Hora Anterior):<a class="headerlink" href="#humrel-min-hant-humedad-relativa-minima-en-la-hora-anterior" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Parece tener una distribución más simétrica con una ligera tendencia hacia valores más altos de humedad.</p></li>
+<li><p>La distribución puede ser mesocúrtica.</p></li>
+</ul>
+</section>
+<section id="humrelh-humedad-relativa">
+<h2>HumRelH (Humedad Relativa):<a class="headerlink" href="#humrelh-humedad-relativa" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>La curtosis parece ser alta, lo que indica una concentración de valores cerca del máximo posible.</p></li>
+</ul>
+</section>
+<section id="rafag-max-rafagas-maximas-de-viento">
+<h2>Rafag_Max (Ráfagas Máximas de Viento):<a class="headerlink" href="#rafag-max-rafagas-maximas-de-viento" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>La distribución tiene un claro sesgo positivo, con más valores acumulados en el extremo inferior.</p></li>
+<li><p>La curtosis es bastante alta, lo que indica que hay muchos días con ráfagas de viento suaves y unos pocos con ráfagas extremadamente fuertes.</p></li>
+</ul>
+</section>
+<section id="analisis-bivariado">
+<h2>Análisis Bivariado<a class="headerlink" href="#analisis-bivariado" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Las variables de interés</span>
+<span class="n">variables</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;DicVientoH&#39;</span><span class="p">,</span> <span class="s1">&#39;HumRel_Max_HAnt&#39;</span><span class="p">,</span> <span class="s1">&#39;HumRel_Min_HAnt&#39;</span><span class="p">,</span> <span class="s1">&#39;HumRelH&#39;</span><span class="p">,</span> <span class="s1">&#39;Rafag_Max&#39;</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;VelVientoH&#39;</span>
+
+<span class="c1"># Configurar el área de trazado</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">variables</span><span class="p">),</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">variables</span><span class="p">)))</span>
+<span class="n">correlation_results</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="c1"># Bucle sobre cada variable para gráficos y cálculos</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">var</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">variables</span><span class="p">):</span>
+    <span class="c1"># Scatter plot</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">var</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">dfWind</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+    <span class="n">axs</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Scatter plot of </span><span class="si">{</span><span class="n">var</span><span class="si">}</span><span class="s1"> vs </span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    
+    <span class="c1"># Regression plot</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">regplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">var</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">dfWind</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+    <span class="n">axs</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Regression plot of </span><span class="si">{</span><span class="n">var</span><span class="si">}</span><span class="s1"> vs </span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    
+    <span class="c1"># Calculamos las correlaciones de Pearson y Spearman</span>
+    <span class="n">pearson_corr</span><span class="p">,</span> <span class="n">pearson_pval</span> <span class="o">=</span> <span class="n">pearsonr</span><span class="p">(</span><span class="n">dfWind</span><span class="p">[</span><span class="n">var</span><span class="p">],</span> <span class="n">dfWind</span><span class="p">[</span><span class="n">y</span><span class="p">])</span>
+    <span class="n">spearman_corr</span><span class="p">,</span> <span class="n">spearman_pval</span> <span class="o">=</span> <span class="n">spearmanr</span><span class="p">(</span><span class="n">dfWind</span><span class="p">[</span><span class="n">var</span><span class="p">],</span> <span class="n">dfWind</span><span class="p">[</span><span class="n">y</span><span class="p">])</span>
+    
+    <span class="c1"># Almacenamos los resultados en un diccionario</span>
+    <span class="n">correlation_results</span><span class="p">[</span><span class="n">var</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;Pearson Correlation&#39;</span><span class="p">:</span> <span class="n">pearson_corr</span><span class="p">,</span>
+        <span class="s1">&#39;Pearson p-value&#39;</span><span class="p">:</span> <span class="n">pearson_pval</span><span class="p">,</span>
+        <span class="s1">&#39;Spearman Correlation&#39;</span><span class="p">:</span> <span class="n">spearman_corr</span><span class="p">,</span>
+        <span class="s1">&#39;Spearman p-value&#39;</span><span class="p">:</span> <span class="n">spearman_pval</span>
+    <span class="p">}</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Convertimos los resultados de la correlación en un DataFrame para visualizarlos</span>
+<span class="n">correlation_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">correlation_results</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+<span class="n">correlation_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/da4ca62596570f276a2123c0ebbf3207d89f5a5e6ff236d5011991f4602926cf.png" src="_images/da4ca62596570f276a2123c0ebbf3207d89f5a5e6ff236d5011991f4602926cf.png" />
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Pearson Correlation</th>
+      <th>Pearson p-value</th>
+      <th>Spearman Correlation</th>
+      <th>Spearman p-value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>DicVientoH</th>
+      <td>0.256588</td>
+      <td>0.0</td>
+      <td>0.370495</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>HumRel_Max_HAnt</th>
+      <td>-0.282787</td>
+      <td>0.0</td>
+      <td>-0.314024</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>HumRel_Min_HAnt</th>
+      <td>-0.291752</td>
+      <td>0.0</td>
+      <td>-0.311877</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>HumRelH</th>
+      <td>-0.301358</td>
+      <td>0.0</td>
+      <td>-0.325641</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>Rafag_Max</th>
+      <td>0.868279</td>
+      <td>0.0</td>
+      <td>0.877391</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<ul class="simple">
+<li><p><strong>H_0</strong> : No hay correlación entre ambas variables</p></li>
+<li><p><strong>H_1</strong> : hay correlación entre ambas variables</p></li>
+</ul>
+<ol class="arabic simple">
+<li><p><strong>DicVientoH:</strong></p>
+<ul class="simple">
+<li><p>Pearson: 0.2566 (correlación positiva débil)</p></li>
+<li><p>Spearman: 0.3705 (correlación positiva moderada)</p></li>
+<li><p>En ambos casos, el p-valor es 0.0, lo que indica que hay evidencia significativa para rechazar la hipótesis nula</p></li>
+</ul>
+</li>
+<li><p><strong>HumRel_Max_HAnt:</strong></p>
+<ul class="simple">
+<li><p>Pearson: -0.2828 (correlación negativa débil)</p></li>
+<li><p>Spearman: -0.3140 (correlación negativa moderada)</p></li>
+<li><p>El p-valor es 0.0 para ambas correlaciones, sugiriendo que es extremadamente improbable que estas correlaciones sean el resultado del azar.</p></li>
+</ul>
+</li>
+<li><p><strong>HumRel_Min_HAnt:</strong></p>
+<ul class="simple">
+<li><p>Pearson: -0.2918 (correlación negativa débil)</p></li>
+<li><p>Spearman: -0.3119 (correlación negativa moderada)</p></li>
+<li><p>Con p-valores de 0.0, las correlaciones son estadísticamente significativas.</p></li>
+</ul>
+</li>
+<li><p><strong>HumRelH:</strong></p>
+<ul class="simple">
+<li><p>Pearson: -0.3014 (correlación negativa débil)</p></li>
+<li><p>Spearman: -0.3256 (correlación negativa moderada)</p></li>
+<li><p>Los p-valores de 0.0 indican una significancia estadística en la correlación.</p></li>
+</ul>
+</li>
+<li><p><strong>Rafag_Max:</strong></p>
+<ul class="simple">
+<li><p>Pearson: 0.8683 (correlación positiva fuerte)</p></li>
+<li><p>Spearman: 0.8774 (correlación positiva fuerte)</p></li>
+<li><p>Con p-valores de 0.0, esta es la correlación más fuerte y significativa de todas las variables examinadas.</p></li>
+</ul>
+</li>
+</ol>
+<p>Todas las variables mostraron una asociación estadísticamente significativa con <code class="docutils literal notranslate"><span class="pre">VelVientoH</span></code>. Con <code class="docutils literal notranslate"><span class="pre">Rafag_Max</span></code> mostrando la correlación más fuerte. Esto significa que, basándose en los datos de muestra, hay una asociación lineal entre estas variables y <code class="docutils literal notranslate"><span class="pre">VelVientoH</span></code>.</p>
+</section>
+<section id="vif">
+<h2>VIF<a class="headerlink" href="#vif" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">statsmodels.stats.outliers_influence</span> <span class="kn">import</span> <span class="n">variance_inflation_factor</span>
+
+<span class="k">def</span> <span class="nf">calculate_vif</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="n">VIF</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+    <span class="n">VIF</span><span class="p">[</span><span class="s2">&quot;Variable&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span>
+    <span class="n">VIF</span><span class="p">[</span><span class="s2">&quot;VIF&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">variance_inflation_factor</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])]</span>
+    <span class="k">return</span> <span class="n">VIF</span>
+
+<span class="c1"># Preparar el DataFrame para el cálculo de VIF, eliminando cualquier valor no numérico y manejo de valores faltantes</span>
+<span class="n">df_numeric</span> <span class="o">=</span> <span class="n">dfWind</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;float64&#39;</span><span class="p">,</span> <span class="s1">&#39;int64&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+
+<span class="c1"># Eliminar la variable de respuesta &#39;VelVientoH&#39; si está presente</span>
+<span class="k">if</span> <span class="s1">&#39;VelVientoH&#39;</span> <span class="ow">in</span> <span class="n">df_numeric</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+    <span class="n">df_numeric</span> <span class="o">=</span> <span class="n">df_numeric</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;VelVientoH&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Calcular el VIF inicial</span>
+<span class="n">vif_data</span> <span class="o">=</span> <span class="n">calculate_vif</span><span class="p">(</span><span class="n">df_numeric</span><span class="p">)</span>
+
+<span class="c1"># Reducir la dimensionalidad eliminando columnas con VIF ≥ 5</span>
+<span class="k">while</span> <span class="n">vif_data</span><span class="p">[</span><span class="s1">&#39;VIF&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="n">max_vif_var</span> <span class="o">=</span> <span class="n">vif_data</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;VIF&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Eliminando </span><span class="si">{</span><span class="n">max_vif_var</span><span class="p">[</span><span class="s1">&#39;Variable&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> con VIF: </span><span class="si">{</span><span class="n">max_vif_var</span><span class="p">[</span><span class="s1">&#39;VIF&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="n">df_numeric</span> <span class="o">=</span> <span class="n">df_numeric</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">max_vif_var</span><span class="p">[</span><span class="s1">&#39;Variable&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    
+    <span class="n">vif_data</span> <span class="o">=</span> <span class="n">calculate_vif</span><span class="p">(</span><span class="n">df_numeric</span><span class="p">)</span>
+
+<span class="n">vif_data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Eliminando PresAtmos_Min_HAnt con VIF: 965371.7239906547
+Eliminando PresAtmos_Max_HAnt con VIF: 222364.72987633428
+Eliminando Temp_Max_HAnt con VIF: 2402.391831924075
+Eliminando HumRelH con VIF: 589.1890466437395
+Eliminando HumRel_Max_HAnt con VIF: 310.1109960465707
+Eliminando PresAtmosH con VIF: 131.95561756866454
+Eliminando Temp_Min_HAnt con VIF: 12.640946487654055
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Variable</th>
+      <th>VIF</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>DicVientoH</td>
+      <td>1.389529</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>HumRel_Min_HAnt</td>
+      <td>3.184922</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>PrecipHo</td>
+      <td>1.039001</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Rafag_Max</td>
+      <td>3.678934</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Estos VIF más bajos sugieren que las variables listadas tienen menos problemas de multicolinealidad en comparación con las que se eliminaron.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">variables</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;DicVientoH&#39;</span><span class="p">,</span> <span class="s1">&#39;HumRel_Max_HAnt&#39;</span><span class="p">,</span> <span class="s1">&#39;HumRel_Min_HAnt&#39;</span><span class="p">,</span> <span class="s1">&#39;HumRelH&#39;</span><span class="p">,</span> <span class="s1">&#39;Rafag_Max&#39;</span><span class="p">,</span> <span class="s1">&#39;VelVientoH&#39;</span><span class="p">]</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">dfWind</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">variables</span><span class="p">]</span>
+<span class="n">data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>DicVientoH</th>
+      <th>HumRel_Max_HAnt</th>
+      <th>HumRel_Min_HAnt</th>
+      <th>HumRelH</th>
+      <th>Rafag_Max</th>
+      <th>VelVientoH</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.809017</td>
+      <td>69.0</td>
+      <td>60.0</td>
+      <td>61.0</td>
+      <td>3.8</td>
+      <td>1.8</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.965926</td>
+      <td>62.0</td>
+      <td>55.0</td>
+      <td>55.0</td>
+      <td>4.7</td>
+      <td>2.7</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.891007</td>
+      <td>56.0</td>
+      <td>50.0</td>
+      <td>51.0</td>
+      <td>4.9</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.848048</td>
+      <td>52.0</td>
+      <td>44.0</td>
+      <td>44.0</td>
+      <td>5.8</td>
+      <td>2.5</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.224951</td>
+      <td>50.0</td>
+      <td>43.0</td>
+      <td>46.0</td>
+      <td>5.8</td>
+      <td>2.4</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>87688</th>
+      <td>-0.615661</td>
+      <td>83.0</td>
+      <td>78.0</td>
+      <td>80.0</td>
+      <td>12.3</td>
+      <td>5.6</td>
+    </tr>
+    <tr>
+      <th>87689</th>
+      <td>-0.469472</td>
+      <td>84.0</td>
+      <td>79.0</td>
+      <td>84.0</td>
+      <td>9.9</td>
+      <td>4.9</td>
+    </tr>
+    <tr>
+      <th>87690</th>
+      <td>-0.484810</td>
+      <td>86.0</td>
+      <td>82.0</td>
+      <td>86.0</td>
+      <td>8.9</td>
+      <td>4.5</td>
+    </tr>
+    <tr>
+      <th>87691</th>
+      <td>-0.484810</td>
+      <td>88.0</td>
+      <td>85.0</td>
+      <td>88.0</td>
+      <td>8.0</td>
+      <td>3.2</td>
+    </tr>
+    <tr>
+      <th>87692</th>
+      <td>-0.573576</td>
+      <td>95.0</td>
+      <td>88.0</td>
+      <td>95.0</td>
+      <td>7.5</td>
+      <td>2.3</td>
+    </tr>
+  </tbody>
+</table>
+<p>87693 rows × 6 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">rolling_window_kfolds</span><span class="p">(</span><span class="n">lista</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">jump</span><span class="p">):</span>
+    <span class="n">folds</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span> <span class="o">-</span> <span class="n">window</span>
+    <span class="c1"># Lista para guardar los resultados</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">fold</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">folds</span><span class="p">):</span>
+        <span class="n">start_idx</span> <span class="o">=</span> <span class="n">fold</span>
+        <span class="n">end_idx</span> <span class="o">=</span> <span class="n">start_idx</span> <span class="o">+</span> <span class="n">window</span>
+        <span class="n">end_idx_test</span> <span class="o">=</span> <span class="n">start_idx</span> <span class="o">+</span> <span class="mi">1</span>
+
+        
+        <span class="n">data</span> <span class="o">=</span> <span class="n">lista</span><span class="p">[</span><span class="n">start_idx</span><span class="p">:</span><span class="n">end_idx</span><span class="p">]</span>
+        <span class="n">target</span> <span class="o">=</span> <span class="n">lista</span><span class="p">[</span><span class="n">end_idx</span><span class="p">:</span> <span class="n">end_idx</span> <span class="o">+</span> <span class="n">window</span><span class="p">]</span>
+        <span class="n">data_test</span> <span class="o">=</span> <span class="n">lista</span><span class="p">[</span><span class="n">start_idx</span><span class="p">:</span><span class="n">end_idx_test</span><span class="p">]</span>
+        <span class="n">target_test</span> <span class="o">=</span> <span class="n">lista</span><span class="p">[</span><span class="n">end_idx</span><span class="p">:</span> <span class="n">end_idx</span> <span class="o">+</span> <span class="n">jump</span><span class="p">]</span>
+        
+        
+        <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s1">&#39;window&#39;</span><span class="p">:</span> <span class="n">data</span><span class="p">,</span> <span class="s1">&#39;target&#39;</span><span class="p">:</span> <span class="n">target</span><span class="p">,</span> <span class="s1">&#39;data_test&#39;</span> <span class="p">:</span><span class="n">data_test</span><span class="p">,</span> <span class="s1">&#39;target_test&#39;</span><span class="p">:</span> <span class="n">target_test</span> <span class="p">})</span>
+        
+        <span class="k">if</span> <span class="n">fold</span> <span class="o">==</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span><span class="o">//</span><span class="n">window</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">break</span>
+            
+            
+    <span class="k">return</span> <span class="n">results</span>
+
+<span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">))]</span> <span class="c1"># lista para obtener los indices</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">rolling_window_kfolds</span><span class="p">(</span><span class="n">lista</span><span class="p">,</span> <span class="n">window</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">jump</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">Ridge</span><span class="p">,</span> <span class="n">Lasso</span><span class="p">,</span> <span class="n">LinearRegression</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">TimeSeriesSplit</span>
+<span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">Pipeline</span>
+<span class="kn">from</span> <span class="nn">tqdm.notebook</span> <span class="kn">import</span> <span class="n">tqdm</span>
+
+<span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;VelVientoH&#39;</span><span class="p">]</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;VelVientoH&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  
+
+
+<span class="n">min_rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span>
+<span class="n">best_parameters</span> <span class="o">=</span> <span class="p">{}</span>
+
+
+<span class="n">alphas</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>  
+
+
+<span class="k">for</span> <span class="n">alpha</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">alphas</span><span class="p">):</span>
+    <span class="n">rmses</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">result</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">results</span><span class="p">):</span>
+        <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;window&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span>
+        <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;data_test&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;target_test&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span>
+
+        <span class="c1"># Crear un pipeline con Ridge</span>
+        <span class="n">ridge_pipeline</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([</span>
+            <span class="p">(</span><span class="s1">&#39;model&#39;</span><span class="p">,</span> <span class="n">Ridge</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="n">alpha</span><span class="p">))</span>
+        <span class="p">])</span>
+
+
+        <span class="n">ridge_pipeline</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+        <span class="n">y_pred</span> <span class="o">=</span> <span class="n">ridge_pipeline</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+        <span class="n">rmse</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">))</span>
+        <span class="n">rmses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rmse</span><span class="p">)</span>
+
+    <span class="n">mean_rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">rmses</span><span class="p">)</span>
+
+
+    <span class="k">if</span> <span class="n">mean_rmse</span> <span class="o">&lt;</span> <span class="n">min_rmse</span><span class="p">:</span>
+        <span class="n">min_rmse</span> <span class="o">=</span> <span class="n">mean_rmse</span>
+        <span class="n">best_parameters</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;alpha&#39;</span><span class="p">:</span> <span class="n">alpha</span><span class="p">}</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Ridge - Best parameters:&#39;</span><span class="p">,</span> <span class="n">best_parameters</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Ridge - Minimum RMSE:&#39;</span><span class="p">,</span> <span class="n">min_rmse</span><span class="p">)</span>
+
+
+<span class="n">min_rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span>
+<span class="n">best_parameters</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="k">for</span> <span class="n">alpha</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">alphas</span><span class="p">):</span>
+    <span class="n">rmses</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">result</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">results</span><span class="p">):</span>
+        <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;window&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span>
+        <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;data_test&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;target_test&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span>
+
+        <span class="n">lasso_pipeline</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([</span>
+            <span class="p">(</span><span class="s1">&#39;model&#39;</span><span class="p">,</span> <span class="n">Lasso</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="n">alpha</span><span class="p">))</span>
+        <span class="p">])</span>
+
+        <span class="n">lasso_pipeline</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+        <span class="n">y_pred</span> <span class="o">=</span> <span class="n">lasso_pipeline</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+        <span class="n">rmse</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">))</span>
+        <span class="n">rmses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rmse</span><span class="p">)</span>
+
+
+    <span class="n">mean_rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">rmses</span><span class="p">)</span>
+
+  
+    <span class="k">if</span> <span class="n">mean_rmse</span> <span class="o">&lt;</span> <span class="n">min_rmse</span><span class="p">:</span>
+        <span class="n">min_rmse</span> <span class="o">=</span> <span class="n">mean_rmse</span>
+        <span class="n">best_parameters</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;alpha&#39;</span><span class="p">:</span> <span class="n">alpha</span><span class="p">}</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Lasso - Best parameters:&#39;</span><span class="p">,</span> <span class="n">best_parameters</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Lasso - Minimum RMSE:&#39;</span><span class="p">,</span> <span class="n">min_rmse</span><span class="p">)</span>
+
+
+<span class="n">min_rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span>
+<span class="n">best_parameters</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">)):</span> 
+    <span class="n">rmses</span> <span class="o">=</span> <span class="p">[]</span>
+
+  
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">result</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">results</span><span class="p">):</span>
+        <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;window&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span>
+        <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;data_test&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;target_test&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span>
+
+        <span class="c1"># Crear un pipeline con Regresión Lineal</span>
+        <span class="n">linear_pipeline</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([</span>
+            <span class="p">(</span><span class="s1">&#39;model&#39;</span><span class="p">,</span> <span class="n">LinearRegression</span><span class="p">())</span>
+        <span class="p">])</span>
+
+  
+        <span class="n">linear_pipeline</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+
+        <span class="n">y_pred</span> <span class="o">=</span> <span class="n">linear_pipeline</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+        <span class="n">rmse</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">))</span>
+        <span class="n">rmses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rmse</span><span class="p">)</span>
+
+
+    <span class="n">mean_rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">rmses</span><span class="p">)</span>
+
+
+    <span class="k">if</span> <span class="n">mean_rmse</span> <span class="o">&lt;</span> <span class="n">min_rmse</span><span class="p">:</span>
+        <span class="n">min_rmse</span> <span class="o">=</span> <span class="n">mean_rmse</span>
+        <span class="n">best_parameters</span> <span class="o">=</span> <span class="p">{}</span> 
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Linear Regression - Best parameters:&#39;</span><span class="p">,</span> <span class="n">best_parameters</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Linear Regression - Minimum RMSE:&#39;</span><span class="p">,</span> <span class="n">min_rmse</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "a26e95c1ebb74d5692e5f66c35948e57", "version_major": 2, "version_minor": 0}</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ridge - Best parameters: {&#39;alpha&#39;: 0.1}
+Ridge - Minimum RMSE: 0.2034157867077786
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "b662228d1fd946fa8673371d7606586f", "version_major": 2, "version_minor": 0}</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Lasso - Best parameters: {&#39;alpha&#39;: 0.1}
+Lasso - Minimum RMSE: 0.3180614676823436
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "ba0cd7c2ba5847068cf4a67370096048", "version_major": 2, "version_minor": 0}</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Linear Regression - Best parameters: {}
+Linear Regression - Minimum RMSE: 0.1396505289863826
+</pre></div>
+</div>
+</div>
+</div>
+<p>Para Ridge y Lasso, el mejor parámetro de regularización fue ‘alpha’: 0.1. La regresión lineal, mostró el rendimiento más sobresaliente con el RMSE más bajo de 0.1396. Ridge y Lasso tuvieron RMSEs de 0.2034 y 0.3180 respectivamente. Estos resultados indican que, para el conjunto de datos dado, la regresión lineal predice con mayor precisión la variable dependiente, sugiriendo su idoneidad para modelar la relación entre velocidad del viento en este caso.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">EDA</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#librerias">Librerias</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cargar-los-datos">Cargar los Datos</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descripcion-de-tipos-de-variables">Descripción de tipos de variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datos-faltantes">Datos Faltantes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resumen-estadistico">Resumen Estadístico</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#direccion-del-viento-dicvientoh">Dirección del Viento (DicVientoH)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#velocidad-del-viento-velvientoh">Velocidad del Viento (VelVientoH)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#humedad-relativa-maxima-en-la-hora-anterior-humrel-max-hant">Humedad Relativa Máxima en la Hora Anterior (HumRel_Max_HAnt)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#humedad-relativa-minima-en-la-hora-anterior-humrel-min-hant">Humedad Relativa Mínima en la Hora Anterior (HumRel_Min_HAnt)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#temperatura-maxima-del-dia-anterior-temp-max-hant">Temperatura Máxima del Día Anterior (Temp_Max_HAnt)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#temperatura-minima-del-dia-anterior-temp-min-hant">Temperatura Mínima del Día Anterior (Temp_Min_HAnt)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#humedad-relativa-humrelh">Humedad Relativa (HumRelH)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#presion-atmosferica-presatmosh">Presión Atmosférica (PresAtmosH)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#precipitacion-horaria-precipho">Precipitación Horaria (PrecipHo)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rafagas-maximas-de-viento-rafag-max">Ráfagas Máximas de Viento (Rafag_Max)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#presion-atmosferica-maxima-del-dia-anterior-presatmos-max-hant">Presión Atmosférica Máxima del Día Anterior (PresAtmos_Max_HAnt)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-simetria-datos-atipicos-y-dispersion">Análisis de simetría, datos atípicos y dispersión</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#velvientoh">VelVientoH:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dicvientoh">DicVientoH:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#humrel-max">HumRel_Max:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#humrel-min">HumRel_Min:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#humrelh">HumRelH:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rafag-max">Rafag_Max:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dicvientoh-direccion-del-viento">DicVientoH (Dirección del Viento):</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#velvientoh-velocidad-del-viento">VelVientoH (Velocidad del Viento):</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#humrel-max-hant-humedad-relativa-maxima-en-la-hora-anterior">HumRel_Max_HAnt (Humedad Relativa Máxima en la Hora Anterior):</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#humrel-min-hant-humedad-relativa-minima-en-la-hora-anterior">HumRel_Min_HAnt (Humedad Relativa Mínima en la Hora Anterior):</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#humrelh-humedad-relativa">HumRelH (Humedad Relativa):</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rafag-max-rafagas-maximas-de-viento">Rafag_Max (Ráfagas Máximas de Viento):</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-bivariado">Análisis Bivariado</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vif">VIF</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
